@@ -83,7 +83,7 @@ const Home = () => {
             </p>
           ) : (
             // If movies are found, map through the array and display movie cards
-            Array.isArray(movies) ? (
+            Array.isArray(movies) && movies.length > 0 ? (
               movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
             ) : (
               // If the movies data is not an array, show a "Loading..." message

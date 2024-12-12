@@ -1,4 +1,5 @@
 import React from "react"; 
+import { Link } from "react-router-dom";
 
 function LeftSide({ movie, genre, setGenre, setSearch }) {
   // handleClick function to handle genre selection
@@ -11,6 +12,8 @@ function LeftSide({ movie, genre, setGenre, setSearch }) {
     <div className="bg-green-600 w-auto h-full">
       {/* List of genres */}
       <ul>
+
+        <li className=" bg-green-200 border-y py-4 px-8 cursor-pointer text-green-600 font-bold"><Link to="/favorites"><p>My Favorites</p></Link></li>
         {/* If 'movie' is an empty string, show an error message */}
         {movie === "" ? (
           "Error"

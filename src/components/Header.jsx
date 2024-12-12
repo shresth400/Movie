@@ -1,7 +1,12 @@
 import React from 'react'; // Importing React
 import SearchBar from './SearchBar'; // Importing the SearchBar component
+import { useLocation } from 'react-router-dom';
+import { MdLocalGasStation } from 'react-icons/md';
 
 const Header = ({ search, setSearch }) => {
+
+  const location = useLocation()
+
   return (
     <>
       {/* Header container with green background and flexible layout */}
@@ -16,7 +21,14 @@ const Header = ({ search, setSearch }) => {
         {/* Search bar section */}
         <div>
           {/* SearchBar component, passing down search and setSearch as props */}
+
+        {
+          location.pathname === "/"  && (
           <SearchBar search={search} setSearch={setSearch} />
+
+          )
+        }
+
         </div>
       </div>
     </>

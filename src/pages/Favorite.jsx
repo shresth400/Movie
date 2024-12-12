@@ -3,6 +3,9 @@ import axios from "axios";
 import MovieCard from "../components/MovieCard";
 
 const Favorite = () => {
+
+
+
 	const apiKey = process.env.REACT_APP_API_KEY; // API key for The Movie DB API
 	const baseURL = "https://api.themoviedb.org/3/movie/"; // Base URL for The Movie DB API
 
@@ -47,13 +50,19 @@ const Favorite = () => {
 
 	return (
         <>
-        <div className="flex">
+        <div className="flex flex-wrap">
 
         {
+            favorite.length > 0 ?
             favorite.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
             ))
+            :
+            <p className="m-10 text-3xl">You Don't have any Favorite Movies yet!!</p>
+
         }
+
+
         </div>
         </>
     )
