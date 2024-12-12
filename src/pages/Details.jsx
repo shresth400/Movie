@@ -10,11 +10,12 @@ const Details = () => {
   const [error, setError] = useState(null); // Error state
   const params = useParams();
   const movieId = params.id;
+  const api = process.env.REACT_APP_API_KEY
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=59857a06cd1b18db4121a0c4d3dc7ce6`
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api}`
       )
       .then((res) => {
         setDetails(res.data);

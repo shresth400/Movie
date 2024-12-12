@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { FaVirusCovid } from 'react-icons/fa6'
+
 
 const AddFavorites = (props) => {
 
     console.log(props.favorite)
 
-    let isFavorite = false;
+
 
     const favoriteMovies = JSON.parse(localStorage.getItem('favorite')) || []
     const exist = favoriteMovies.find((id) => id === props.movie_id)

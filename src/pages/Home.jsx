@@ -11,7 +11,7 @@ const Home = () => {
 
   const { search, setSearch } = useOutletContext(); // Get search state and setSearch function from parent
 
-  const apiKey = "59857a06cd1b18db4121a0c4d3dc7ce6"; // API key for The Movie DB API
+  const apiKey = process.env.REACT_APP_API_KEY; // API key for The Movie DB API
   const baseURL = "https://api.themoviedb.org/3"; // Base URL for The Movie DB API
 
   // Fetch genres 
