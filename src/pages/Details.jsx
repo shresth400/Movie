@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Details = () => {
   const [details, setDetails] = useState(null); // Initialize as null
@@ -41,6 +42,25 @@ const Details = () => {
   const productionCompanies = details && details.production_companies;
 
   return (
+    <>
+
+<div>
+
+<Link to="/">
+<div className="flex-1 w-40 h-full m-4">
+<div className="flex w-full bg-green-600 shadow rounded-lg py-2 px-4">
+<div>
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+  </svg>
+</div>
+<p className="m-auto inset-0 text-xl font-semibold leading-7 text-center text-white">Go Back</p>
+</div>
+</div>
+</Link>
+</div>
+
+
     <div className="max-w-6xl mx-auto p-6">
       <div className="flex flex-col lg:flex-row bg-green-600 text-white rounded-lg shadow-lg">
         {/* Left Side: Poster */}
@@ -50,8 +70,8 @@ const Details = () => {
               src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
               alt={details.title}
               className="w-full rounded-lg"
-            />
-          )}
+              />
+            )}
         </div>
 
         {/* Right Side: Movie Info */}
@@ -96,6 +116,7 @@ const Details = () => {
         </div>
       </div>
     </div>
+              </>
   );
 };
 

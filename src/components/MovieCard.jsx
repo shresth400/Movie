@@ -32,7 +32,7 @@ const MovieCard = (props) => {
 	return (
 		<>
 			{/* Card container for each movie */}
-			<div className="w-80 bg-green-600 rounded-md shadow-md m-4 shadow-green-600 hover:scale-105 transition-transform transform duration-500 relative">
+			<div className="w-80 h-auto bg-green-600 rounded-md shadow-md m-4 shadow-green-600 hover:scale-105 transition-transform transform duration-500 relative">
 				{/* Link that navigates to the details page of the specific movie */}
 				<Link to={`/details/${props.movie.id}`}>
 					<div>
